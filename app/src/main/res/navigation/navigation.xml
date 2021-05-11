@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.applesvsoranges.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_versusFragment"
+            app:destination="@id/versusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/versusFragment"
+        android:name="com.example.applesvsoranges.ui.versus.VersusFragment"
+        android:label="versus_fragment"
+        tools:layout="@layout/versus_fragment" />
+</navigation>

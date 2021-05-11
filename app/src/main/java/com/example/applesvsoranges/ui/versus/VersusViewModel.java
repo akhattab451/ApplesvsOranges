@@ -1,4 +1,4 @@
-package com.example.applesvsoranges.ui.main;
+package com.example.applesvsoranges.ui.versus;
 
 import javax.inject.Inject;
 
@@ -7,10 +7,10 @@ import androidx.lifecycle.ViewModel;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 
 @HiltViewModel
-public class MainViewModel extends ViewModel {
+public class VersusViewModel extends ViewModel {
 
     @Inject
-    public MainViewModel(SavedStateHandle savedStateHandle) {
+    public VersusViewModel(SavedStateHandle savedStateHandle) {
 
     }
 }
