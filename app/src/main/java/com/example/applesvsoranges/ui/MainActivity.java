@@ -3,12 +3,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import dagger.hilt.android.AndroidEntryPoint;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Predicate;
+import io.reactivex.schedulers.Schedulers;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.applesvsoranges.R;
 import com.example.applesvsoranges.databinding.MainActivityBinding;
+import com.example.applesvsoranges.domain.Fruit;
 import com.example.applesvsoranges.util.Utils;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -26,5 +38,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Objects.requireNonNull(navHostFragment).getNavController();
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> Utils.hideKeyboard(this));
+
+        
     }
 }

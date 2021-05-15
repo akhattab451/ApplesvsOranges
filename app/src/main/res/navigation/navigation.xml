@@ -18,5 +18,12 @@
         android:id="@+id/versusFragment"
         android:name="com.example.applesvsoranges.ui.versus.VersusFragment"
         android:label="versus_fragment"
-        tools:layout="@layout/versus_fragment" />
+        tools:layout="@layout/versus_fragment" >
+        <argument
+            android:name="apple"
+            app:argType="string" />
+        <argument
+            android:name="orange"
+            app:argType="string" />
+    </fragment>
 </navigation>

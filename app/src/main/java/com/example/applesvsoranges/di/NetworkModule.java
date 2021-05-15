@@ -1,6 +1,6 @@
 package com.example.applesvsoranges.di;
 
-import com.example.applesvsoranges.network.DictionaryService;
+import com.example.applesvsoranges.source.remote.DictionaryService;
 
 import dagger.Module;
 import dagger.Provides;
@@ -19,7 +19,7 @@ public class NetworkModule {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl("https://api.dictionaryapi.dev/api")
+                .baseUrl("https://api.dictionaryapi.dev/api/")
                 .build();
     }
 
