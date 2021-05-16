@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import dagger.hilt.android.AndroidEntryPoint;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import android.view.View;
@@ -34,26 +35,45 @@ public class VersusFragment extends Fragment {
         VersusFragmentBinding binding = VersusFragmentBinding.bind(view);
         VersusViewModel mViewModel = new ViewModelProvider(this).get(VersusViewModel.class);
 
+        VersusFragmentArgs args = VersusFragmentArgs.fromBundle(getArguments());
+
         disposable.add(
-                mViewModel.getAppleFlowable()
+                mViewModel.getFruitFlowable(args.getApple())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeOn(Schedulers.io())
                         .subscribe(
                                 fruit -> {
                                     binding.tvApple.setText(fruit.getWord());
                                     binding.tvAppleDescription.setText(fruit.getDefinition());
+                                },
+                                throwable -> {
+                                    binding.tvApple.setText(args.getApple());
+                                    binding.tvAppleDescription.setText(
+                                            String.format(getString(R.string.error_template),
+                                                    throwable.getMessage(),
+                                                    args.getOrange())
+                                    );
                                 }
                         )
         );
 
         disposable.add(
-                mViewModel.getOrangeFlowable()
+                mViewModel.getFruitFlowable(args.getOrange())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeOn(Schedulers.io())
                         .subscribe(
                                 fruit -> {
                                     binding.tvOrange.setText(fruit.getWord());
                                     binding.tvOrangeDescription.setText(fruit.getDefinition());
+                                },
+                                throwable -> {
+                                    binding.tvOrange.setText(args.getOrange());
+                                    binding.tvOrangeDescription.setText(
+                                            String.format(getString(R.string.error_template),
+                                            throwable.getMessage(),
+                                            args.getOrange())
+                                    );
+
                                 }
                         )
         );
