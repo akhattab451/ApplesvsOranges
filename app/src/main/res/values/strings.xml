@@ -4,4 +4,5 @@
     <string name="orange">Orange</string>
     <string name="compare">Compare</string>
     <string name="compare_anything">Compare Anything!</string>
+    <string name="error_template">"%s: Could not find a definition for the word %s."</string>
 </resources>

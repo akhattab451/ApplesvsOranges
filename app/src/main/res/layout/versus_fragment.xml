@@ -6,19 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.versus.VersusFragment">
 
-    <TextView
-        android:id="@+id/tv_apple"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/small_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_default="wrap"
-        tools:text="Apple" />
+        <TextView
+            android:id="@+id/tv_apple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/small_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="wrap"
+            tools:text="Apple" />
 
+        <TextView
+            android:id="@+id/tv_apple_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_apple"
+            app:layout_constraintWidth_default="wrap"
+            tools:text="Apple is a red fruit" />
     <TextView
         android:id="@+id/tv_orange"
         android:layout_width="0dp"
@@ -32,16 +42,7 @@
         app:layout_constraintWidth_default="wrap"
         tools:text="Orange" />
 
-    <TextView
-        android:id="@+id/tv_apple_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_margin"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_apple"
-        app:layout_constraintWidth_default="wrap"
-        tools:text="Apple is a red fruit" />
+
 
     <TextView
         android:id="@+id/tv_orange_description"
